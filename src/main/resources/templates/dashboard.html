@@ -93,13 +93,13 @@
                     <span class="category-icon" th:text="${cat.icon}"></span>
                     <span class="category-title" th:text="${cat.name}"></span>
                     <button class="btn-add-link" title="Añadir enlace" onclick="openAddLinkModal(this.closest('.category'))">+</button>
-                    <button class="btn-delete-cat" th:if="${!cat.builtin}" title="Eliminar categoría" onclick="deleteCategory('__${cat.id}__')">×</button>
+                    <button class="btn-delete-cat" th:if="${!cat.isBuiltin}" title="Eliminar categoría" onclick="deleteCategory('__${cat.id}__')">×</button>
                 </div>
                 <a th:each="link : ${cat.links}" th:href="${link.url}" class="link-item" target="_blank"
-                   th:attr="data-link-id=${link.id}, data-is-builtin=${link.builtin}">
+                   th:attr="data-link-id=${link.id}, data-is-builtin=${link.isBuiltin}">
                     <img th:src="|https://www.google.com/s2/favicons?domain=${link.domain}&sz=64|" alt="">
                     <span th:text="${link.name}"></span>
-                    <button th:if="${!link.builtin}" class="btn-delete-link" title="Eliminar"
+                    <button th:if="${!link.isBuiltin}" class="btn-delete-link" title="Eliminar"
                             onclick="event.preventDefault(); event.stopPropagation(); deleteLink('__${link.id}__')">×</button>
                 </a>
             </div>

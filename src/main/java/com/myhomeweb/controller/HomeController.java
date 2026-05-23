@@ -18,7 +18,9 @@ public class HomeController {
     @GetMapping("/")
     @Transactional(readOnly = true)
     public String dashboard(Model model) {
-        model.addAttribute("categories", categoryService.findAllOrdered());
+        var categories = categoryService.findAllOrdered();
+        categories.forEach(c -> c.getLinks().size()); // force lazy init before session closes
+        model.addAttribute("categories", categories);
         return "dashboard";
     }
 }

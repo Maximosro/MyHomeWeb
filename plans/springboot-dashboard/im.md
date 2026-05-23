@@ -31,7 +31,7 @@
 | `static/js/dashboard.js` | CREAR | JS adaptado: fetch API + widgets cliente |
 
 ## PR
-Pendiente
+https://github.com/Maximosro/MyHomeWeb/pull/1
 
 ## Notas
 - `back.png` no encontrado en Descargas — CSS tiene fallback `background-color: #0a0a12`

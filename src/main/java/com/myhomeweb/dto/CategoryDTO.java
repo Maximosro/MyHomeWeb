@@ -1,7 +1,14 @@
 package com.myhomeweb.dto;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class CategoryDTO {
 
     private String id;
@@ -24,16 +31,4 @@ public class CategoryDTO {
         return dto;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getIcon() { return icon; }
-    public void setIcon(String icon) { this.icon = icon; }
-    public int getDisplayOrder() { return displayOrder; }
-    public void setDisplayOrder(int displayOrder) { this.displayOrder = displayOrder; }
-    public boolean isBuiltin() { return builtin; }
-    public void setBuiltin(boolean builtin) { this.builtin = builtin; }
-    public List<LinkDTO> getLinks() { return links; }
-    public void setLinks(List<LinkDTO> links) { this.links = links; }
 }

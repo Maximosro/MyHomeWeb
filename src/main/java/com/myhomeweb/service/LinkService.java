@@ -3,21 +3,18 @@ package com.myhomeweb.service;
 import com.myhomeweb.model.Category;
 import com.myhomeweb.model.Link;
 import com.myhomeweb.repository.LinkRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class LinkService {
 
     private final LinkRepository linkRepository;
     private final CategoryService categoryService;
-
-    public LinkService(LinkRepository linkRepository, CategoryService categoryService) {
-        this.linkRepository = linkRepository;
-        this.categoryService = categoryService;
-    }
 
     @Transactional(readOnly = true)
     public List<Link> findByCategoryId(String categoryId) {

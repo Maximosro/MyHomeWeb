@@ -2,6 +2,7 @@ package com.myhomeweb.controller;
 
 import com.myhomeweb.dto.LinkDTO;
 import com.myhomeweb.service.LinkService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,13 +10,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/links")
+@RequiredArgsConstructor
 public class LinkApiController {
 
     private final LinkService linkService;
-
-    public LinkApiController(LinkService linkService) {
-        this.linkService = linkService;
-    }
 
     @PostMapping
     public ResponseEntity<LinkDTO> createLink(@RequestBody Map<String, Object> body) {

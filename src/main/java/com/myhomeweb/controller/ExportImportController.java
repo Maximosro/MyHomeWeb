@@ -7,26 +7,20 @@ import com.myhomeweb.repository.CategoryRepository;
 import com.myhomeweb.repository.LinkRepository;
 import com.myhomeweb.service.CategoryService;
 import com.myhomeweb.service.LinkService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class ExportImportController {
 
     private final CategoryService categoryService;
     private final LinkService linkService;
     private final CategoryRepository categoryRepository;
     private final LinkRepository linkRepository;
-
-    public ExportImportController(CategoryService categoryService, LinkService linkService,
-                                   CategoryRepository categoryRepository, LinkRepository linkRepository) {
-        this.categoryService = categoryService;
-        this.linkService = linkService;
-        this.categoryRepository = categoryRepository;
-        this.linkRepository = linkRepository;
-    }
 
     @GetMapping("/export")
     public ExportDTO exportData() {

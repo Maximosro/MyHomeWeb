@@ -145,7 +145,7 @@ document.getElementById('bw-refresh').addEventListener('click', measureBandwidth
 measureBandwidth();
 
 // ===== API helpers =====
-const API_BASE = '/api/v1';
+const API_BASE = '/myhomeweb/api/v1';
 
 async function apiFetch(method, path, body) {
     const options = { method, headers: {} };

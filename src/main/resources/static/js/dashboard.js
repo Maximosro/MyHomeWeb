@@ -1,3 +1,6 @@
+// ===== Focus en el buscador de Google al cargar la web =====
+document.querySelector('.search-form input[name="q"]').focus();
+
 // ===== Date display =====
 const now = new Date();
 document.getElementById('date-weekday').textContent = now.toLocaleDateString('es-ES', { weekday: 'long' }).toUpperCase();
@@ -142,7 +145,7 @@ document.getElementById('bw-refresh').addEventListener('click', measureBandwidth
 measureBandwidth();
 
 // ===== API helpers =====
-const API_BASE = '/api/v1';
+const API_BASE = '/myhomeweb/api/v1';
 
 async function apiFetch(method, path, body) {
     const options = { method, headers: {} };

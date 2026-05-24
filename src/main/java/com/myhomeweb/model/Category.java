@@ -1,12 +1,19 @@
 package com.myhomeweb.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "categories")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Category {
 
     @Id
@@ -29,8 +36,6 @@ public class Category {
     @OrderBy("displayOrder ASC")
     private List<Link> links = new ArrayList<>();
 
-    public Category() {}
-
     public Category(String name, String icon, Integer displayOrder, Boolean isBuiltin) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
@@ -47,16 +52,4 @@ public class Category {
         this.isBuiltin = isBuiltin;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getIcon() { return icon; }
-    public void setIcon(String icon) { this.icon = icon; }
-    public Integer getDisplayOrder() { return displayOrder; }
-    public void setDisplayOrder(Integer displayOrder) { this.displayOrder = displayOrder; }
-    public Boolean getIsBuiltin() { return isBuiltin; }
-    public void setIsBuiltin(Boolean isBuiltin) { this.isBuiltin = isBuiltin; }
-    public List<Link> getLinks() { return links; }
-    public void setLinks(List<Link> links) { this.links = links; }
 }

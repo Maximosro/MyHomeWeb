@@ -2,6 +2,7 @@ package com.myhomeweb.controller;
 
 import com.myhomeweb.dto.CategoryDTO;
 import com.myhomeweb.service.CategoryService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,13 +12,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/categories")
+@RequiredArgsConstructor
 public class CategoryApiController {
 
     private final CategoryService categoryService;
-
-    public CategoryApiController(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
 
     @GetMapping
     @Transactional(readOnly = true)

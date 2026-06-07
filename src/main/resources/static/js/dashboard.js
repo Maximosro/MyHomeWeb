@@ -1,3 +1,6 @@
+// ===== Focus Google search on load =====
+document.getElementById('search-input').focus();
+
 // ===== Date display =====
 const now = new Date();
 document.getElementById('date-weekday').textContent = now.toLocaleDateString('es-ES', { weekday: 'long' }).toUpperCase();

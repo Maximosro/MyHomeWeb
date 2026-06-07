@@ -41,3 +41,4 @@ data/
 # Spring Boot
 *.jar
 !target/*.jar
+/.playwright-mcp
